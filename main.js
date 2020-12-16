@@ -1,13 +1,10 @@
 const getUsers = (e) => {
   e.preventDefault();
-
   const usersNumber = document.querySelector('[name = "users-number"]').value;
   const userGender = document.querySelector('[name = "gender"]').value;
-  console.log(usersNumber, userGender);
   const url = `https://randomuser.me/api/?results=${usersNumber}&gender=${
     userGender === "both" ? "male,female" : userGender
   }`;
-  console.log(url);
   fetch(url)
     .then((res) => {
       if (res.status !== 200) {
